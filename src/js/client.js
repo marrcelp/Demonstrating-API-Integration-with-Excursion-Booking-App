@@ -219,7 +219,6 @@ function validateForm(e){
 
         newOrder.sendOrder(orderData);
         basket.length = 0;
-        console.log(basket);
         createSummary(basket);
 
         alert (`Dziękujemy za złożenie zamówienia o wartości ${totalPrice.textContent}. Szczegóły zamówienia zostały wysłane na adres e-mail: ${emailInput.value}`);

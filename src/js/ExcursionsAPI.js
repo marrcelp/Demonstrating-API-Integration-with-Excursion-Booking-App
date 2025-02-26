@@ -41,6 +41,35 @@ class ExcursionsAPI {
             .finally(() => console.log('Zakonczono wysylanie zamowienia'))
     }
 
+    deleteExcursion(id){
+
+        const options = {
+            method: 'DELETE'
+        }
+
+        fetch(`${this.apiExcursions}/${id}`, options)
+            .then(resp => console.log(resp))
+            .catch(err => console.error(err))
+            .finally(this.loadExcursions());
+    }
+
+    addExcursion(data){
+
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json'}
+        }
+
+        fetch(this.apiExcursions, options)
+            .then(resp => console.log(resp))
+            .catch(err => console.error(err))
+            .finally(this.loadExcursions())
+
+    }
+
+    
+
 }
 
 

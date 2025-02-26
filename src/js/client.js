@@ -21,6 +21,7 @@ console.log('client');
 const ulEl = document.querySelector('.panel__excursions');
 const liEl = document.querySelector('.excursions__item--prototype')
 const totalPrice = document.querySelector('.order__total-price-value');
+const summaryList = document.querySelector('.summary');
 
 const basket = [];
 
@@ -108,8 +109,6 @@ function calculateTotalPrice(basket){
 }
 
 
-const summaryList = document.querySelector('.summary');
-
 function createSummary(basket){
 
     Array.from(summaryList.children).forEach(function(item) { // tworzę tablicę z "dzieci"
@@ -156,4 +155,69 @@ function createSummary(basket){
         
     })
     
+}
+
+
+const orderForm = document.querySelector('.order');
+const nameInput = orderForm.querySelector('input[name="name"]');
+const emailInput = orderForm.querySelector('input[name="email"]')
+const errorList = orderForm.querySelector('.order__errors')
+
+
+if (orderForm){
+    orderForm.addEventListener('submit', validateForm);
+}
+
+function validateForm(e){
+    e.preventDefault();
+    errorList.innerHTML = '';
+
+    const errorMessages = [];
+    const fields = [
+        {
+            name: 'name',
+            label: 'Imię i Nazwisko',
+            required: true,
+            type: 'text'
+        },
+        {
+            name: 'email',
+            label: 'E-mail',
+            required: true,
+            type: 'email',
+            pattern: '@'
+        },
+    ]
+
+    fields.forEach((field) => {
+        const {name, label, required, type, pattern = null} = field;
+        const value = orderForm.elements[name].value;
+
+        if (required){
+            if(value.length === 0 ){
+                errorMessages.push(`Dane w polu ${label} są wymagane!`);
+            }
+        }
+
+        if (pattern){
+            const reg = new RegExp(pattern);
+            if(!reg.test(value)){
+                errorMessages.push(`Dane w polu ${label} mają niepoprawny format!`)
+            }
+        }
+
+    })
+
+    if (errorMessages.length == 0){
+        alert (`Dziękujemy za złożenie zamówienia o wartości ${totalPrice.textContent}. Szczegóły zamówienia zostały wysłane na adres e-mail: ${emailInput.value}`);
+        nameInput.value = '';
+        emailInput.value = '';
+    } else {
+        errorMessages.forEach((error) => {
+            const newLi = document.createElement('li');
+            newLi.innerText = error;
+            errorList.appendChild(newLi);
+        })
+    }
+
 }

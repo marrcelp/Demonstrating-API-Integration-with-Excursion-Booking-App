@@ -209,9 +209,24 @@ function validateForm(e){
     })
 
     if (errorMessages.length == 0){
+        const newOrder = new ExcursionsAPI;
+
+        const orderData = {
+            ...basket,
+            name: nameInput.value,
+            email: emailInput.value
+        }
+
+        newOrder.sendOrder(orderData);
+        basket.length = 0;
+        console.log(basket);
+        createSummary(basket);
+
         alert (`Dziękujemy za złożenie zamówienia o wartości ${totalPrice.textContent}. Szczegóły zamówienia zostały wysłane na adres e-mail: ${emailInput.value}`);
+
         nameInput.value = '';
         emailInput.value = '';
+
     } else {
         errorMessages.forEach((error) => {
             const newLi = document.createElement('li');

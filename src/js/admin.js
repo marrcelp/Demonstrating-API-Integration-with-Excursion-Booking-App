@@ -18,10 +18,8 @@ function init() {
     })
 }
 
-
 const ulEl = document.querySelector('.panel__excursions');
 const liEl = document.querySelector('.excursions__item--prototype')
-
 
 function renderTripDetails(liElement, ulElement, excursion){
         
@@ -44,7 +42,6 @@ function renderTripDetails(liElement, ulElement, excursion){
     ulElement.appendChild(liElCopy);
     
     deleteExcursion(btnRemove, excursion, liElCopy);
-    
 }
 
 function deleteExcursion(btn, excursion, li){
@@ -56,12 +53,9 @@ function deleteExcursion(btn, excursion, li){
         excursionApi.deleteExcursion(excursion.id);
         li.remove();
     })
-
 }
 
 const formExcursion = document.querySelector('.form');
-
-
 
 formExcursion.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -109,7 +103,6 @@ formExcursion.addEventListener('submit', (e) => {
     const sendToAPI = new ExcursionsAPI;
             sendToAPI.addExcursion(excursionData);
             console.log(excursionData);
-
 
 })
 

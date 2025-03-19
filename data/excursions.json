@@ -18,10 +18,17 @@
     },
     {
       "city": "Kraków",
-      "description": "Zwiedzanie Wawelu",
+      "description": "zwiedzanie Wawelu",
       "priceForAdult": "66",
-      "priceForChild": "33",
+      "priceForChild": "22",
       "id": 3
+    },
+    {
+      "city": "Kielce",
+      "description": "zwiedzanie fabryki majonezu",
+      "priceForAdult": "22",
+      "priceForChild": "11",
+      "id": 4
     }
   ],
   "orders": []

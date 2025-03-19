@@ -68,10 +68,21 @@ class ExcursionsAPI {
 
     }
 
-    
+    updateExcursion(data, id){
+
+        const options = {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {'Content-Type': 'application/json'}
+        }
+
+        fetch(`${this.apiExcursions}/${id}`, options)
+            .then(resp => console.log(resp))
+            .catch(err => console.error(err))
+            .finally(this.loadExcursions())
+
+    }
 
 }
-
-
 
 export default ExcursionsAPI;

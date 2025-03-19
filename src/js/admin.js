@@ -86,23 +86,27 @@ formExcursion.addEventListener('submit', (e) => {
     const excursionData = {};
     
     
-    newExcursionData.forEach((field) => {
+    for (const field of newExcursionData) {
         const {name, label, type, required = true} = field;
         const value = formExcursion.elements[name].value;
         
     
         if (required && value.length === 0){
             alert(`Dane w polu ${label} są wymagane!`)
+            return
         } else {
             
             excursionData[name] = value;
+            
     
         }
-    });
+    };
     
     const sendToAPI = new ExcursionsAPI;
             sendToAPI.addExcursion(excursionData);
             console.log(excursionData);
+            alert(`Pomyślnie dodano wycieczkę!`)
+            location.reload();
 
 })
 

@@ -24,12 +24,26 @@
       "id": 3
     },
     {
-      "city": "Kielce",
-      "description": "zwiedzanie fabryki majonezu",
-      "priceForAdult": "22",
-      "priceForChild": "11",
+      "city": "test",
+      "description": "test",
+      "priceForAdult": "11",
+      "priceForChild": "1",
       "id": 4
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "0": {
+        "id": 4,
+        "city": "Kielce",
+        "priceForAdult": "22",
+        "priceForChild": "11",
+        "adults": 2,
+        "children": 1
+      },
+      "name": "janusz kowalski",
+      "email": "j2j2j@gmail.com",
+      "id": 1
+    }
+  ]
 }

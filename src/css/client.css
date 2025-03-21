@@ -94,6 +94,39 @@ ul {
     display: none;
 }
 
+.panel__form {
+    background-color: white;
+    color: #375B36;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 20px;
+    width: 30%;
+    border-radius: 20px;
+    margin: 10px 0 10px 10px;
+}
+
+.uploader, .order {
+    border-bottom: 3px solid #6A9B68;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.excursions__field-input, .order__field-input {
+    padding: 5px 20px;
+    color: white;
+    background-color:#AFD6AD;
+    border: none;
+    font-family: "League Spartan", sans-serif;
+    font-size: 1rem;
+    border-radius: 20px;
+    box-shadow: none;
+    appearance: none;
+    border-style: solid;
+   
+}
+
 .excursions__field-input--submit {
     padding: 5px 20px;
     color: white;
@@ -101,22 +134,97 @@ ul {
     border-color: #AFD6AD;
     font-family: "League Spartan", sans-serif;
     font-size: 1rem;
+    font-weight: 600;
     border-radius: 20px;
     text-transform: uppercase;
     box-shadow: none;
     appearance: none;
     border-style: solid;
     margin-top: 20px;
+    cursor: pointer;
 }
 
-.panel__form {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 30%;
+.excursions__field {
+    margin: 10px 0;
 }
 
-.uploader, .order {
-    border-bottom: 1px solid #bbb;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+.order__field {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.order__field-name {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.order__field-submit {
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #375B36;
+    padding: 10px 40px;
+}
+
+.order__total-price {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.order__total-price-value {
+    background-color: #375B36;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.order__errors {
+    color: red;
+    font-size: 0.8rem;
+    list-style: disc;
+}
+
+.summary__line {
+    width: 100%;
+    background-color: #6A9B68;
+    height: 3px;
+    border: none;
+    margin: 15px 0;
+}
+
+.summary__btn-remove {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.summary__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.panel__summary {
+    text-transform: uppercase;
+}
+
+.summary__total-price {
+    border: 1px solid #375B36;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
 }

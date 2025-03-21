@@ -26,8 +26,8 @@
     {
       "city": "test",
       "description": "test",
-      "priceForAdult": "11",
-      "priceForChild": "1",
+      "priceForAdult": "22",
+      "priceForChild": "11",
       "id": 4
     }
   ],

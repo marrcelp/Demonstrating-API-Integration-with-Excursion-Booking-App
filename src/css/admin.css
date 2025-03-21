@@ -99,7 +99,7 @@ body {
 }
 
 .form__row {
-    margin-left: 10px;
+    margin: 0 10px;
 }
 
 .form__label {

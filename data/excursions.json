@@ -18,16 +18,16 @@
     },
     {
       "city": "Kraków",
-      "description": "zwiedzanie Wawelu",
-      "priceForAdult": "66",
-      "priceForChild": "22",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi commodi suscipit adipisci neque ipsam repellendus odit quaerat cum, voluptate perspiciatis quas reiciendis totam laudantium maxime alias modi necessitatibus facilis odio! Nulla fugiat quidem veniam! Consectetur pariatur iure quia cupiditate numquam ex, beatae eligendi ipsum debitis, provident recusandae nobis esse quidem?",
+      "priceForAdult": "120",
+      "priceForChild": "90",
       "id": 3
     },
     {
-      "city": "test",
-      "description": "test",
-      "priceForAdult": "22",
-      "priceForChild": "11",
+      "city": "Warszawa",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi exercitationem officiis non ab sapiente autem similique magnam corrupti temporibus delectus perspiciatis culpa veniam dolor, aliquam quisquam odio accusamus quas nam, doloribus, neque impedit cum voluptatem expedita minima! Laborum, facilis ab.",
+      "priceForAdult": "150",
+      "priceForChild": "100",
       "id": 4
     }
   ],
@@ -114,6 +114,11 @@
       "name": "Marcel",
       "email": "janusz@gmail.com",
       "id": 3
+    },
+    {
+      "name": "Marcel",
+      "email": "janusz@gmail.com",
+      "id": 4
     }
   ]
 }

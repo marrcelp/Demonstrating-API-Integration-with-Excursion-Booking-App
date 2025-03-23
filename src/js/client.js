@@ -129,7 +129,7 @@ function createSummary(basket){
         summaryElementCopy.classList.remove('summary__item--prototype');
 
         name.textContent = element.city;
-        total.textContent = `SUMA ${Number((element.adults * element.priceForAdult) + (element.children * element.priceForChild))} PLN`;
+        total.textContent = `SUMA: ${Number((element.adults * element.priceForAdult) + (element.children * element.priceForChild))} PLN`;
         prices.innerHTML = `dorośli: ${element.adults} x ${element.priceForAdult}PLN<br>dzieci: ${element.children} x ${element.priceForChild}PLN`
         btnRemove.textContent = '(usuń z koszyka)';
 

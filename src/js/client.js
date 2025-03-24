@@ -214,7 +214,8 @@ function validateForm(e){
         const orderData = {
             ...basket,
             name: nameInput.value,
-            email: emailInput.value
+            email: emailInput.value,
+            order_date: new Date(),
         }
 
         newOrder.sendOrder(orderData);

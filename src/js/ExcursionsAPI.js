@@ -35,10 +35,7 @@ class ExcursionsAPI {
             headers: {'Content-Type': 'application/json'}
         }
 
-        fetch(this.apiOrders, options)
-            .then(resp => console.log(resp))
-            .catch(err => console.error(err))
-            .finally(() => console.log('Zakonczono wysylanie zamowienia'))
+        this.fetchData(this.apiOrders, options)
     }
 
     deleteExcursion(id){
@@ -47,10 +44,7 @@ class ExcursionsAPI {
             method: 'DELETE'
         }
 
-        fetch(`${this.apiExcursions}/${id}`, options)
-            .then(resp => console.log(resp))
-            .catch(err => console.error(err))
-            .finally(this.loadExcursions());
+        this.fetchData(`${this.apiExcursions}/${id}`, options, true)
     }
 
     addExcursion(data){
@@ -61,11 +55,7 @@ class ExcursionsAPI {
             headers: {'Content-Type': 'application/json'}
         }
 
-        fetch(this.apiExcursions, options)
-            .then(resp => console.log(resp))
-            .catch(err => console.error(err))
-            .finally(this.loadExcursions())
-
+        this.fetchData(this.apiExcursions, options, true);
     }
 
     updateExcursion(data, id){
@@ -76,13 +66,25 @@ class ExcursionsAPI {
             headers: {'Content-Type': 'application/json'}
         }
 
-        fetch(`${this.apiExcursions}/${id}`, options)
+        this.fetchData(`${this.apiExcursions}/${id}`, options, true)
+    }
+
+    fetchData(apiUrl, options, shouldReload = false) {
+        fetch(apiUrl, options)
             .then(resp => console.log(resp))
             .catch(err => console.error(err))
-            .finally(this.loadExcursions())
-
+            .finally(() => {
+                console.log('Zakończono operację fetch');
+                if (shouldReload) {
+                    this.loadExcursions();
+                }
+            })
     }
 
 }
 
 export default ExcursionsAPI;
+
+
+
+

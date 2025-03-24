@@ -168,7 +168,7 @@ The API requests are handled in the ExcursionsAPI class, ensuring a separation o
 ```
 fetch(this.apiExcursions)
     .then(resp => resp.json())
-    .then(data => { console.log(data); })
+    .then(data => { renderExcursions(data); })
     .catch(err => console.error(err));
 ```
 

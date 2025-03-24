@@ -1,6 +1,7 @@
 import './../css/admin.css';
 
 import ExcursionsAPI from './ExcursionsAPI';
+import newExcursionData from './formFields';
 
 console.log('admin');
 
@@ -80,29 +81,7 @@ const formExcursion = document.querySelector('.form');
 formExcursion.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const newExcursionData = [
-        {
-            name: 'city',
-            label: 'Nazwa',
-            type: 'text'
-        },
-        {
-            name: 'description',
-            label: 'Opis',
-            type: 'text'
-        },
-        {
-            name: 'priceForAdult',
-            label: 'Cena dorosły',
-            type: 'number'
-        },
-        {
-            name: 'priceForChild',
-            label: 'Cena dziecko',
-            type: 'number'
-        },
-        
-    ];
+    
     
     const excursionData = {};
     

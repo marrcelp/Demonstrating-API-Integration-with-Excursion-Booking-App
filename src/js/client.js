@@ -1,6 +1,7 @@
 import './../css/client.css';
 
 import ExcursionsAPI from './ExcursionsAPI';
+import fields from './userFields';
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -173,21 +174,6 @@ function validateForm(e){
     errorList.innerHTML = '';
 
     const errorMessages = [];
-    const fields = [
-        {
-            name: 'name',
-            label: 'Imię i Nazwisko',
-            required: true,
-            type: 'text'
-        },
-        {
-            name: 'email',
-            label: 'E-mail',
-            required: true,
-            type: 'email',
-            pattern: '@'
-        },
-    ]
 
     fields.forEach((field) => {
         const {name, label, required, type, pattern = null} = field;

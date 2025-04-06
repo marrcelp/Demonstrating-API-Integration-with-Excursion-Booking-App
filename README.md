@@ -3,15 +3,18 @@
 
 # Find your perfect trip
 
-See the live version of this project - [Find your perfect trip](https://marrcelp.github.io/Demonstrating-API-Integration-with-Excursion-Booking-App/).
+See the live version of this project:
+
+- 🖥 [User interface](https://marrcelp.github.io/Demonstrating-API-Integration-with-Excursion-Booking-App/)
+- 🔧 [Admin panel](https://marrcelp.github.io/Demonstrating-API-Integration-with-Excursion-Booking-App/admin)
 
 The goal of this project is to showcase my understanding of REST API through an application that allows users to find the perfect weekend excursion. The excursion data is fetched from an API hosted on a self-configured server on AWS and displayed on the main page. Each trip includes a detailed description, as well as pricing for both adults and children.
 Users can place an order by selecting the number of participants (adults and children), adding excursions to the cart, and then providing their contact information – name, surname, and email address. The submitted order, along with the entered details, is sent to the API, where the administrator can view all received orders.
 The project also includes an admin panel that allows managing excursions – adding new ones and editing existing entries.
 
 **Main features**:
-- Displaying available excursions to the user by fetching data from the API (http://16.170.252.49:3000/excursions) – managing the excursion list.
-- Allowing users to place an order by adding excursions to the cart and filling out all required, validated fields. The submitted order is then sent to the API (http://16.170.252.49:3000/orders) – managing orders.
+- Displaying available excursions to the user by fetching data from the API (`https://16.170.252.49/excursions`) – managing the excursion list.
+- Allowing users to place an order by adding excursions to the cart and filling out all required, validated fields. The submitted order is then sent to the API (`https://16.170.252.49/orders`) – managing orders.
 - An admin panel that allows adding and editing excursions.
 
 
@@ -39,20 +42,25 @@ Are you interested in **RWD** and **CSS**? See my other project [Responsive Layo
 
 The project uses [npm](https://www.npmjs.com/). To install it, type into the terminal: `npm install`. To run the project, use the command: `npm start`.
 
-If you want to launch the client version, simply open http://localhost:8080/index.html in your browser.
-The admin panel is available at: http://localhost:8080/admin.html.
+If you want to launch the project locally for development purposes:
 
-To start the backend, you don't need to run anything locally. The API is already live and running on a server I configured myself on AWS, using json-server. You can access the backend directly at: `http://16.170.252.49:3000/excursions` and `http://16.170.252.49:3000/orders`.
+- Open `http://localhost:8080/index.html` for the user interface
+- Open `http://localhost:8080/admin.html` for the admin panel
+
+To start the backend, you don't need to run anything locally. The API is already live and running on a server I configured myself on AWS using **json-server**. It is served over HTTPS with a self-signed certificate using **Nginx as a reverse proxy**.
+
+API endpoints:
+
+- `https://16.170.252.49/excursions`
+- `https://16.170.252.49/orders`
 
 
 &nbsp;
 
 ## 🛠️ AWS Server Configuration (short overview)
 
-I manually set up an Ubuntu-based EC2 instance on AWS. After configuring the firewall and opening port 3000, I installed Node.js and globally installed json-server. Then I deployed the excursions.json file and ran the backend with:
-`json-server --watch excursions.json --port 3000`
+I manually set up an Ubuntu-based EC2 instance on AWS. After configuring the firewall and opening the necessary ports (3000 and 443), I installed Node.js and globally installed json-server. Then I deployed the `excursions.json` file and ran the backend using PM2 to keep it alive in the background:
 
-To keep the server running in the background after closing the terminal, I used pm2:
 ```
 pm2 start json-server --name json-api -- \
   --watch /home/ubuntu/excursions_app/excursions.json --port 3000

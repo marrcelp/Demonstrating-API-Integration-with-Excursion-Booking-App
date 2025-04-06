@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 // importuję bibliotękę [path] z [node.js]
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -37,6 +38,10 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
                 // określam jaki [loader]
                 // ma być wykorzystany
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: 'asset/resource',
             }
         ]
     },
@@ -56,6 +61,14 @@ module.exports = {
             // określan nazwę dla pliku
             chunks: ['admin'],
             // wskazuje plik do podpięcia
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/css/assets'),
+                    to: 'assets'
+                }
+            ]
         })
     ]
 }

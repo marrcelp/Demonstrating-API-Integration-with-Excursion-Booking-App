@@ -1,8 +1,8 @@
 class ExcursionsAPI {
 
     constructor(){
-        this.apiExcursions = 'http://16.170.252.49:3000/excursions';
-        this.apiOrders = 'http://16.170.252.49:3000/orders'
+        this.apiExcursions = 'https://16.170.252.49/excursions';
+        this.apiOrders = 'https://16.170.252.49/orders'
     }
 
     fetchExcursions(url){

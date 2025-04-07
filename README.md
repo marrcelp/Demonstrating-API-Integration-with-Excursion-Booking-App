@@ -19,6 +19,21 @@ The project also includes an admin panel that allows managing excursions – add
 
 
 &nbsp;
+
+## ❗️ First-time setup notice
+
+For security reasons, the API is hosted with a self-signed HTTPS certificate.
+Before using the app for the first time, you need to manually visit the API link and confirm your browser's security exception:
+
+🔗 https://16.170.252.49
+
+- Open the link above in your browser
+- Click “Advanced” → “Proceed to 16.170.252.49 (unsafe)”
+- Return to the app – it will now be able to fetch data from the API correctly
+
+This only needs to be done once per browser.
+
+&nbsp;
  
 ## 💡 Technologies
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
